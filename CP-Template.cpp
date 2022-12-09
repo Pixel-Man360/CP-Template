@@ -74,6 +74,11 @@ ll __gcd (ll a, ll b)
     return b ? __gcd (b, a % b) : a;
 }
 
+ll __lcm(ll a, ll b)
+{
+    return (a / __gcd(a , b)) * b;
+}
+
 void Solve()
 {
     
