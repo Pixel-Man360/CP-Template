@@ -18,37 +18,37 @@ using namespace std;
 
 const ll sz = 1e7 + 5;
 
-vector <ll> mark; 
-char prime[sz]; 
+vector <ll> prime; 
+int mark[sz]; 
 
 void Seive () 
 {
-    prime[0] = prime[1] = 1;
+    mark[0] = mark[1] = 1;
  
-    mark.push_back(2); 
+    prime.push_back(2); 
     for ( int i = 4; i <= sz; i += 2 ) 
     {
-        prime[i] = 1;
+        mark[i] = 1;
     }
  
     int sqrtn = sqrt(sz);
 
     for ( int i = 3; i <= sqrtn; i += 2 ) 
     {
-        if ( prime[i] == 0 ) 
+        if ( mark[i] == 0 ) 
         {
             for ( int j = i * i; j <= sz; j += 2 * i ) 
             {
-                prime[j] = 1;
+                mark[j] = 1;
             }
         }
     }
  
     for ( int i = 3; i <= sz; i += 2 )
     {
-        if ( prime[i] == 0 )
+        if ( mark[i] == 0 )
         {
-            mark.push_back(i);
+            prime.push_back(i);
         }
     }
 }
