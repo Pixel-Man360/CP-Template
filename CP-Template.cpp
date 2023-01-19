@@ -2,7 +2,7 @@
 typedef long long ll;
 typedef unsigned long long ull;
 
-#define test ll b; cin >> b; while(b--)
+#define test ll b; cin >> b; while(b--) {Solve(); nl}
 #define FST ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #define CS ll c = 1; test{cout << "Case " << c << ": "; Solve(); c++; nl}
 
@@ -93,10 +93,7 @@ int main()
     //CS
 
     test 
-    {
-        Solve();
-
-        nl
-    } 
+    
+   // Solve(); 
     
 }
