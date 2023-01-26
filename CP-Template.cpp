@@ -4,7 +4,7 @@ typedef unsigned long long ull;
 
 #define test ll b; cin >> b; while(b--) {Solve(); nl}
 #define FST ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-#define CS ll c = 1; test{cout << "Case " << c << ": "; Solve(); c++; nl}
+#define CS ll c = 1, t = 1; cin >> t; while(t--){cout << "Case " << c << ": "; Solve(); c++; nl}
 
 #define f(x, n) for(ll i = x; i < n; i++)
 #define fj(x, n) for(ll j = x; j < n; j++)
