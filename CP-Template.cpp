@@ -15,42 +15,23 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-const ll sz = 1e7 + 5;
-
-vector <ll> prime; 
-int mark[sz]; 
-
+const int sz = 1e7 + 5;
+vector<bool> prime(sz + 1, true);
+ 
 void Seive () 
 {
-    mark[0] = mark[1] = 1;
+    prime[0] = prime[1] = 0;
  
-    prime.push_back(2); 
-    for ( int i = 4; i <= sz; i += 2 ) 
+    for (int i = 2; i * i <= sz; i++) 
     {
-        mark[i] = 1;
-    }
- 
-    int sqrtn = sqrt(sz);
-
-    for ( int i = 3; i <= sqrtn; i += 2 ) 
-    {
-        if ( mark[i] == 0 ) 
+        if (prime[i] && (ll) i * i <= sz) 
         {
-            for ( int j = i * i; j <= sz; j += 2 * i ) 
-            {
-                mark[j] = 1;
-            }
-        }
-    }
- 
-    for ( int i = 3; i <= sz; i += 2 )
-    {
-        if ( mark[i] == 0 )
-        {
-            prime.push_back(i);
+            for (int j = i * i; j <= sz; j += i)
+                prime[j] = 0;
         }
     }
 }
+ 
 
 ll BigMod(ll a, ll b, ll m) 
 {
